@@ -8,10 +8,10 @@
   "description": "This is an example configuration for the Homebridge GPIO Stateless Switch plugin",
   "accessories": [
     {
-      "accessory": "StatelessSwitch",
-      "name": "Button",
+      "accessory": "ElectromagneticLock",
+      "name": "Entrance Lock",
       "pin": 5,
-      "activeLow": false
+      "activeLow": true
     }
   ]
 }
