@@ -1,5 +1,5 @@
 # homebridge-gpio-relay-lock
-Homebridge plugin to control stateless lock relay via Raspberry Pi GPIO pins
+Homebridge plugin to control stateless lock relay via Raspberry Pi GPIO pins. extended: lock switch-on time and home kit animation time taken over in config
 
 ## Example config
 ```json
@@ -16,7 +16,9 @@ Homebridge plugin to control stateless lock relay via Raspberry Pi GPIO pins
       "accessory": "ElectromagneticLock",
       "name": "Entrance Lock",
       "pin": 5,
-      "activeLow": true
+      "activeLow": true,
+      "powerDuration":200,
+      "homekitDuration":2000
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "name": "homebridge-gpio-relay-lock",
-  "version": "1.0.2",
+  "name": "homebridge-gpio-relay-lock-extended",
+  "version": "1.0.4",
   "description": "Homebridge plugin to control stateless lock relay via Raspberry Pi GPIO pins. extended: lock switch-on time and home kit animation time taken over in config",
   "license": "MIT",
   "keywords": [
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vincentfuhler/homebridge-window-covering-gpio"
+    "url": "git+https://github.com/vincentfuhler/homebridge-window-covering-gpio.git"
   },
   "dependencies": {
     "rpio": "^2.1.0",
@@ -25,8 +25,15 @@
     "node": ">=6.6.0"
   },
   "maintainers": [
-    {
-      "name": "vincentfuhler"
-    }
-  ]
+    "vincentfuhler"
+  ],
+  "bugs": {
+    "url": "https://github.com/vincentfuhler/homebridge-window-covering-gpio/issues"
+  },
+  "homepage": "https://github.com/vincentfuhler/homebridge-window-covering-gpio#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vincentfuhler"
 }
