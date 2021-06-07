@@ -11,7 +11,9 @@
       "accessory": "ElectromagneticLock",
       "name": "Entrance Lock",
       "pin": 5,
-      "activeLow": true
+      "activeLow": true,
+      "powerDuration":200,
+      "homekitDuration":2000
     }
   ]
 }

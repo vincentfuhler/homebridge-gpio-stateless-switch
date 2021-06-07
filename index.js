@@ -10,13 +10,15 @@ module.exports = function (homebridge) {
 }
 
 function ElectromagneticLockAccessory(log, config) {
-	_.defaults(config, { activeLow: true });
+	_.defaults(config, { activeLow: true, powerDuration:200, homekitDuration:2000 });
 
 	this.log = log;
 	this.name = config['name'];
 	this.pin = config['pin'];
 	this.initialState = config['activeLow'] ? rpio.HIGH : rpio.LOW;
 	this.activeState = config['activeLow'] ? rpio.LOW : rpio.HIGH;
+	this.powerDuration = config['powerDuration'];
+	this.homekitDuration = config['homekitDuration'];
 
 	this.service = new Service.LockMechanism(this.name);
 
@@ -59,8 +61,8 @@ ElectromagneticLockAccessory.prototype.setState = function (state, callback) {
 		setTimeout(function () {
 			this.service.setCharacteristic(Characteristic.LockTargetState, Characteristic.LockTargetState.SECURED);
 			this.service.setCharacteristic(Characteristic.LockCurrentState, Characteristic.LockCurrentState.SECURED);
-		}.bind(this), 2000);
-	}.bind(this), 200);
+		}.bind(this), this.homekitDuration);
+	}.bind(this), this.powerDuration);
 	callback();
 }
 
